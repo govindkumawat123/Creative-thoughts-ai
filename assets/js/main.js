@@ -347,3 +347,123 @@ window.onload = function () {
       "$" + amount.innerHTML + "m+";
   }, 2500); // Match this with the count-up animation duration
 };
+
+var options = {
+  chart: {
+    type: "area",
+    height: 140,
+    toolbar: { show: false },
+  },
+  series: [
+    {
+      name: "GHG Emissions",
+      data: [10, 25, 18, 30, 22, 35],
+    },
+  ],
+  xaxis: {
+    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    axisBorder: { show: false },
+    axisTicks: { show: false },
+    labels: { show: false },
+  },
+  yaxis: {
+    show: false,
+  },
+  stroke: {
+    curve: "smooth",
+    width: 2,
+  },
+  fill: {
+    type: "gradient",
+    gradient: {
+      shade: "light",
+      type: "vertical",
+      gradientToColors: ["#007bff"],
+      stops: [0, 100],
+    },
+  },
+  colors: ["#007bff"],
+  grid: { show: false },
+  tooltip: { enabled: false },
+};
+
+var chart = new ApexCharts(document.querySelector("#et_linear_chart"), options);
+chart.render();
+
+$(document).ready(function () {
+  $(".et_buildcard_collapse_icon").click(function () {
+    $("#ct_collapse_build_first").addClass("d-none");
+    $("#ct_collapse_build").removeClass("d-none");
+  });
+  $(".et_buildcard_collapse_close_icon").click(function () {
+    $("#ct_collapse_build").addClass("d-none");
+    $("#ct_collapse_build_first").removeClass("d-none");
+  });
+});
+
+// Range Slider js S
+var inputLeft = document.getElementById("et-input-left");
+var inputRight = document.getElementById("et-input-right");
+
+var thumbLeft = document.querySelector(".et-slider > .et-thumb.et-left");
+var thumbRight = document.querySelector(".et-slider > .et-thumb.et-right");
+var range = document.querySelector(".et-slider > .et-range");
+
+function setLeftValue() {
+  var _this = inputLeft,
+    min = parseInt(_this.min),
+    max = parseInt(_this.max);
+
+  _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+  var percent = ((_this.value - min) / (max - min)) * 100;
+
+  thumbLeft.style.left = percent + "%";
+  range.style.left = percent + "%";
+}
+setLeftValue();
+
+function setRightValue() {
+  var _this = inputRight,
+    min = parseInt(_this.min),
+    max = parseInt(_this.max);
+
+  _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+  var percent = ((_this.value - min) / (max - min)) * 100;
+
+  thumbRight.style.right = 100 - percent + "%";
+  range.style.right = 100 - percent + "%";
+}
+setRightValue();
+
+inputLeft.addEventListener("input", setLeftValue);
+inputRight.addEventListener("input", setRightValue);
+
+inputLeft.addEventListener("mouseover", function () {
+  thumbLeft.classList.add("et-hover");
+});
+inputLeft.addEventListener("mouseout", function () {
+  thumbLeft.classList.remove("et-hover");
+});
+inputLeft.addEventListener("mousedown", function () {
+  thumbLeft.classList.add("et-active");
+});
+inputLeft.addEventListener("mouseup", function () {
+  thumbLeft.classList.remove("et-active");
+});
+
+inputRight.addEventListener("mouseover", function () {
+  thumbRight.classList.add("et-hover");
+});
+inputRight.addEventListener("mouseout", function () {
+  thumbRight.classList.remove("et-hover");
+});
+inputRight.addEventListener("mousedown", function () {
+  thumbRight.classList.add("et-active");
+});
+inputRight.addEventListener("mouseup", function () {
+  thumbRight.classList.remove("et-active");
+});
+
+// Range Slider js E
