@@ -174,7 +174,10 @@
 .et_card_progress {
   height: 10px;
 }
-
+p {
+  word-wrap: break-word;
+  white-space: normal;
+}
 .ct_text_6B7280 {
   color: #6b7280;
 }
@@ -282,11 +285,7 @@
 }
 
 .et_buildcard_tab .nav-pills .nav-link.active:after {
-  bottom: -5px;
-  border: 8px solid var(--dark_blue);
-  border-radius: 0px 0px 3px 0px;
-  border-top-color: transparent;
-  border-left-color: transparent;
+  display: none;
 }
 
 .et_buildcard_tab ul#pills-tab {
@@ -737,4 +736,179 @@
   color: #fff;
   padding: 6px 15px;
   border-radius: 10px;
+}
+
+.et_outline_payment_tab {
+  padding: 10px 15px;
+  border: 1px solid #e5e7eb;
+  display: block;
+  border-radius: 10px;
+  color: #000;
+  font-size: 14px;
+}
+
+.et_outline_payment_tab.active {
+  border-color: #1b83c1;
+  background-color: #eff9ff;
+}
+
+.et_grid_2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.et_online_payment_tab ul {
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.et_online_payment_tab .nav-pills .nav-link {
+  background-color: transparent;
+}
+
+.et_mb_30 {
+  margin-bottom: 30px;
+}
+
+.et_input_white {
+  height: 48px;
+}
+
+.et_payment_icon_img {
+  height: 30px;
+  object-fit: contain;
+}
+
+ul.ct_wire_frame_grid li {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+ul.et_todo_tab_list {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+ul.et_todo_tab_list li {
+  padding-bottom: 0px;
+  position: relative;
+}
+ul.et_todo_tab_list li a {
+  font-weight: 500;
+
+  color: #000;
+}
+
+.et_todo_tab_list li.active:after {
+  position: absolute;
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+  background-color: var(--dark_blue);
+  height: 2px;
+  width: 100%;
+}
+
+button.et_grey_btn {
+  background-color: #f1f1f1;
+  height: 38px;
+  border: 1px solid #f1f1f1;
+  border-radius: 100px;
+  padding-inline: 18px;
+}
+.et_filter_list {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 15px;
+}
+.et_todos_count {
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  background-color: #f2f5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.et_todos_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9fafb;
+  padding: 16px 15px;
+  border-top: 3px solid;
+}
+
+.et_todoes_blank_card {
+  padding: 32px 20px;
+  background-color: #f9fafb;
+  text-align: center;
+  height: 100%;
+  margin-top: 15px;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.et_todoes_card {
+  padding: 32px 20px;
+  background-color: #f9fafb;
+  text-align: center;
+  height: 100%;
+  margin-top: 15px;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+}
+.et_todos_grid_4 {
+  display: flex;
+
+  gap: 15px;
+  overflow-x: auto;
+  -webkit-transform: translateZ(0);
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.et_todos_card_main {
+  flex: 0 0 auto;
+  width: 23.999%;
+}
+
+span.et_badge_4 {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.et_todoes_verticle_scroll {
+  height: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+.et_todoes_verticle_scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+.et_todoes_verticle_scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.et_todoes_verticle_scroll::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.et_todoes_verticle_scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

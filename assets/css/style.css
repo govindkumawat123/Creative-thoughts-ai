@@ -117,7 +117,7 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
-  appearance:textfield;
+  appearance: textfield;
 }
 /* All Reset Css E */
 /* All Font Size css S */
